@@ -33,17 +33,19 @@ class WelcomeController: UIViewController {
   
   @objc func handleNext() {
     // button will shrink quickly
-    UIView.animate(withDuration: 0.1, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 1, options: .curveEaseIn, animations: {
-      self.nextButton.transform = CGAffineTransform(scaleX: 0.92, y: 0.92)
-    }) { (_) in
-      // And then re-size batck to it's original size slowly
-      UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 1, options: .curveEaseIn, animations: {
-        self.nextButton.transform = CGAffineTransform(scaleX: 1, y: 1)
-      }) { (_) in
-        self.present(ListController(), animated: true, completion: nil)
-      }
-    }
+//    UIView.animate(withDuration: 0.1, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 1, options: .curveEaseIn, animations: {
+//      self.nextButton.transform = CGAffineTransform(scaleX: 0.92, y: 0.92)
+//    }) { (_) in
+//      // And then re-size batck to it's original size slowly
+//      UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 1, options: .curveEaseIn, animations: {
+//        self.nextButton.transform = CGAffineTransform(scaleX: 1, y: 1)
+//      }) { (_) in
+//        self.present(ListController(), animated: true, completion: nil)
+//      }
+//    }
     
+    self.nextButton.buttonEffect()
+    self.present(ListController(), animated: true, completion: nil)
     
   }
   
