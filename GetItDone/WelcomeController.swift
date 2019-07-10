@@ -11,9 +11,7 @@ import UIKit
 class WelcomeController: UIViewController {
 
   let bg:UIView = {
-    let view = UIView()
-    view.translatesAutoresizingMaskIntoConstraints = false // you need to set this to false in order to add your own constraints
-    view.backgroundColor = .cyan
+    let view = GDGradient() // this is a type of UIView!
     view.layer.cornerRadius = 6
     return view
   }()
@@ -27,8 +25,8 @@ class WelcomeController: UIViewController {
     view.addSubview(bg)
     
     bg.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true // 20 pixels from left
-    bg.topAnchor.constraint(equalTo: view.topAnchor, constant: 20).isActive = true // 20 pixels from top
-    bg.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive = true // 20 pixels from bottom
+    bg.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true // 20 pixels from top
+    bg.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100).isActive = true // 20 pixels from bottom
     bg.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true // 20 pixels from right
     
   }
