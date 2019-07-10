@@ -28,12 +28,10 @@ class WelcomeController: UIViewController {
     
     bg.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true // 20 pixels from left
     bg.topAnchor.constraint(equalTo: view.topAnchor, constant: 20).isActive = true // 20 pixels from top
-    bg.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 20).isActive = true // 20 pixels from bottom
-    bg.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 20).isActive = true // 20 pixels from right
+    bg.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive = true // 20 pixels from bottom
+    bg.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true // 20 pixels from right
     
   }
-  
-
 
 }
 
