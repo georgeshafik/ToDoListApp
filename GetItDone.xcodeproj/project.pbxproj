@@ -21,6 +21,7 @@
 		67C87AC422D5E3EA004D537E /* ListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C87AC322D5E3EA004D537E /* ListController.swift */; };
 		67C87AC622D5E580004D537E /* GDHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C87AC522D5E580004D537E /* GDHeaderView.swift */; };
 		67C87AC922D5F868004D537E /* optionset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C87AC822D5F868004D537E /* optionset.swift */; };
+		67C87ACB22D613E4004D537E /* protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C87ACA22D613E4004D537E /* protocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		67C87AC322D5E3EA004D537E /* ListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListController.swift; sourceTree = "<group>"; };
 		67C87AC522D5E580004D537E /* GDHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDHeaderView.swift; sourceTree = "<group>"; };
 		67C87AC822D5F868004D537E /* optionset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = optionset.swift; sourceTree = "<group>"; };
+		67C87ACA22D613E4004D537E /* protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = protocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 			children = (
 				67C87A9722D58E00004D537E /* extension.swift */,
 				67C87AC822D5F868004D537E /* optionset.swift */,
+				67C87ACA22D613E4004D537E /* protocol.swift */,
 			);
 			path = extension;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 				67C87A9822D58E00004D537E /* extension.swift in Sources */,
 				67C87AC622D5E580004D537E /* GDHeaderView.swift in Sources */,
 				67C87AC922D5F868004D537E /* optionset.swift in Sources */,
+				67C87ACB22D613E4004D537E /* protocol.swift in Sources */,
 				67226CDE22D560BF008489C7 /* AppDelegate.swift in Sources */,
 				67C87AC422D5E3EA004D537E /* ListController.swift in Sources */,
 			);

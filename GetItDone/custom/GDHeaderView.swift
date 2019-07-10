@@ -14,6 +14,7 @@ class GDHeaderView: UIView {
   let titleLabel = GDLabel(size: 14)
   let subtitleLabel = GDLabel(size: 24)
   let addButton = GDButton(title: "+", type: .squareIcon)
+  var delegate:GDHeaderDelegate? // it is optional because it may not exist
   
   init(frame: CGRect = .zero, title:String = "header title", subtitle:String = "header subtitle") {
     super.init(frame: frame)
@@ -47,8 +48,19 @@ class GDHeaderView: UIView {
     addButton.rightAnchor.constraint(equalTo: rightAnchor, constant: -20 - 8).isActive = true
     addButton.heightAnchor.constraint(equalToConstant: 24).isActive = true
     addButton.widthAnchor.constraint(equalTo: addButton.heightAnchor, multiplier: 1).isActive = true // it will take the height of heightAnchor and multiply it by 1 so the width in this case is 24 * 1 - a square
+    
+    addButton.addTarget(self, action: #selector(self.handleAddButton), for: .touchUpInside)
   }
   
+  @objc func handleAddButton() {
+    // We carefully unwrapping it as it may not exist before call delegate.addItem
+    // this will call the addItem method implmented in class ListController that
+    // references the protocol GDHeaderDelegate
+    if let delegate = self.delegate {
+      delegate.addItem()
+    }
+  
+  }
   required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }

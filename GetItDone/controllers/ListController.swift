@@ -8,7 +8,11 @@
 
 import UIKit
 
-class ListController: UIViewController {
+class ListController: UIViewController, GDHeaderDelegate {
+  func addItem() {
+    print("trying to add item from header")
+  }
+  
 
   let header = GDHeaderView(title: "Stuff to get done", subtitle: "4 left")
   
@@ -23,5 +27,6 @@ class ListController: UIViewController {
       header.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
       header.heightAnchor.constraint(equalToConstant: 120).isActive = true
       
+      header.delegate = self
     }  
 }
