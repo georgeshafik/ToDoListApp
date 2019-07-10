@@ -17,6 +17,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     // we have to tell our application what is the root view controller we will use
     
+//    // sourced font from
+//    // https://fonts.google.com/?query=Raleway&selection.family=Raleway
+//    // verifying our font raleway is install and accessible from our app
+//    // Rember we added to info.plist
+//    // Fonts provided by application
+//    //  array item 0 as Raleway-Regular.ttf
+//
+//    // These are how we access our fonts in code
+//    family Raleway, font names ["Raleway-Regular"]
+//    family Raleway SemiBold, font names ["Raleway-SemiBold"]
+//
+//    for family in UIFont.familyNames.sorted() {
+//      let names = UIFont.fontNames(forFamilyName: family)
+//      print(" family \(family), font names \(names)")
+//    }
+            
     let wc = WelcomeController()
     //print("did finish launching with options")
     

@@ -16,7 +16,7 @@ class WelcomeController: UIViewController {
     return view
   }()
   
-  let titleLabel:UILabel = GDLabel(title: "GOT IT CONE", size: 24, textAlign: .center)
+  let titleLabel:UILabel = GDLabel(title: "GOT IT DONE", size: 24, textAlign: .center)
   
   override func viewDidLoad() {
     super.viewDidLoad()

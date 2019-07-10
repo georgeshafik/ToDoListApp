@@ -21,7 +21,7 @@ class GDLabel:UILabel {
     }
     self.text = title
     self.textColor = color
-    self.font = UIFont.systemFont(ofSize: size)
+    self.font = UIFont.init(name: "Raleway-SemiBold", size: size)
     self.textAlignment = textAlign
     
     
