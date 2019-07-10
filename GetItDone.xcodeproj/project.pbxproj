@@ -17,6 +17,7 @@
 		67C87AB922D5ABB0004D537E /* GDLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C87AB822D5ABB0004D537E /* GDLabel.swift */; };
 		67C87ABE22D5C422004D537E /* Raleway-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 67C87ABD22D5C422004D537E /* Raleway-Regular.ttf */; };
 		67C87AC022D5C47F004D537E /* Raleway-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 67C87ABF22D5C47F004D537E /* Raleway-SemiBold.ttf */; };
+		67C87AC222D5D5D2004D537E /* GDButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C87AC122D5D5D2004D537E /* GDButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		67C87AB822D5ABB0004D537E /* GDLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDLabel.swift; sourceTree = "<group>"; };
 		67C87ABD22D5C422004D537E /* Raleway-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Regular.ttf"; sourceTree = "<group>"; };
 		67C87ABF22D5C47F004D537E /* Raleway-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-SemiBold.ttf"; sourceTree = "<group>"; };
+		67C87AC122D5D5D2004D537E /* GDButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 			children = (
 				67C87A9422D5898B004D537E /* GDGradient.swift */,
 				67C87AB822D5ABB0004D537E /* GDLabel.swift */,
+				67C87AC122D5D5D2004D537E /* GDButton.swift */,
 			);
 			path = custom;
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				67C87A9522D5898B004D537E /* GDGradient.swift in Sources */,
+				67C87AC222D5D5D2004D537E /* GDButton.swift in Sources */,
 				67226CE022D560BF008489C7 /* WelcomeController.swift in Sources */,
 				67226CE622D560BF008489C7 /* GetItDone.xcdatamodeld in Sources */,
 				67C87AB922D5ABB0004D537E /* GDLabel.swift in Sources */,
