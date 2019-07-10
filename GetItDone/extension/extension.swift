@@ -12,6 +12,7 @@ extension UIColor {
   
   static var blueZero: UIColor { return UIColor.init(rgb: 0x64E4FF)}
   static var blueOne: UIColor { return UIColor.init(rgb: 0x3A7BD5)}
+  static var grayZero: UIColor { return UIColor.init(rgb: 0x9B9B9B)}
   
   // convenience allows to write out a new initalizer
   convenience init(red: Int, green: Int, blue: Int) {
