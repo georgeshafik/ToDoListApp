@@ -70,16 +70,15 @@
 		67226CDC22D560BF008489C7 /* GetItDone */ = {
 			isa = PBXGroup;
 			children = (
-				67C87ABA22D5B107004D537E /* fonts */,
-				67C87AB722D5AB70004D537E /* custom */,
-				67C87A9622D58DCD004D537E /* extension */,
 				67226CDD22D560BF008489C7 /* AppDelegate.swift */,
-				67226CDF22D560BF008489C7 /* WelcomeController.swift */,
+				67C87ABA22D5B107004D537E /* fonts */,
+				67C87A9622D58DCD004D537E /* extension */,
+				67C87AB722D5AB70004D537E /* custom */,
+				67C87AC722D5EAFC004D537E /* controllers */,
 				67226CE722D560C1008489C7 /* Assets.xcassets */,
 				67226CE922D560C1008489C7 /* LaunchScreen.storyboard */,
 				67226CEC22D560C1008489C7 /* Info.plist */,
 				67226CE422D560BF008489C7 /* GetItDone.xcdatamodeld */,
-				67C87AC322D5E3EA004D537E /* ListController.swift */,
 			);
 			path = GetItDone;
 			sourceTree = "<group>";
@@ -110,6 +109,15 @@
 				67C87ABD22D5C422004D537E /* Raleway-Regular.ttf */,
 			);
 			path = fonts;
+			sourceTree = "<group>";
+		};
+		67C87AC722D5EAFC004D537E /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				67226CDF22D560BF008489C7 /* WelcomeController.swift */,
+				67C87AC322D5E3EA004D537E /* ListController.swift */,
+			);
+			path = controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
