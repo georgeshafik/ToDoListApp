@@ -20,10 +20,12 @@ class GDGradient:UIView {
     UIColor.blueOne.cgColor
   ]
   
-  override init(frame: CGRect) {
+  override init(frame: CGRect = .zero) {
     super.init(frame: frame)
     
-    self.translatesAutoresizingMaskIntoConstraints = false // you need to set this to false in order to add your own constraints
+    if frame == .zero {
+      self.translatesAutoresizingMaskIntoConstraints = false // you need to set this to false in order to add your own constraints
+    }
     
     if let layer = self.layer as? CAGradientLayer {
       layer.colors = self.hexColors
