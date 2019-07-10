@@ -16,8 +16,8 @@ class GDGradient:UIView {
   ]
   
   var hexColors:[CGColor] = [
-    UIColor.init(rgb: 0x64E4FF).cgColor,
-    UIColor.init(rgb: 0x3A7BD5).cgColor
+    UIColor.blueZero.cgColor,
+    UIColor.blueOne.cgColor
   ]
   
   override init(frame: CGRect) {
