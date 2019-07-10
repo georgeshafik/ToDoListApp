@@ -22,7 +22,6 @@ class GDHeaderView: UIView {
     self.titleLabel.text = title
     self.subtitleLabel.text = subtitle
     setupLayout()
-    
   }
   
   func setupLayout() {
@@ -41,13 +40,10 @@ class GDHeaderView: UIView {
     subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor).isActive = true
     subtitleLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 20 + 8).isActive = true
     subtitleLabel.rightAnchor.constraint(equalTo: centerXAnchor, constant: 50).isActive = true
-    
   }
   
   required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
   
-
-
 }

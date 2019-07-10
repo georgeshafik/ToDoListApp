@@ -29,7 +29,7 @@ class WelcomeController: UIViewController {
   
   let copyright = GDLabel(title: "© 2019 | maxcodes.io", color: .grayOne, size: 14, textAlign: .center)
 
-  let nextButton = GDButton(title: "START WINNING")
+  let nextButton = GDButton(title: "START WINNING", type: .roundedText)
   
   @objc func handleNext() {
     // button will shrink quickly
