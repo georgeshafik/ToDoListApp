@@ -34,6 +34,8 @@ class ListController: UIViewController, GDHeaderDelegate, GDNewItemDelegate {
   
   let CELL_ID = "cell_id"
   
+  var listData = ["first item","Hey dood","It's Lit fan"]
+  
   var keyboardHeight:CGFloat = 350
   
   override func viewDidAppear(_ animated: Bool) {
@@ -105,12 +107,15 @@ extension ListController: UITextFieldDelegate {
 extension ListController: UITableViewDelegate, UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 3
+    return listData.count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: CELL_ID, for: indexPath)
-    cell.textLabel?.text = "hello in a cell boi"
+    cell.textLabel?.text = listData[indexPath.row]
+    cell.selectionStyle = .none
+    cell.backgroundColor = .white
+    cell.textLabel?.textColor = .grayZero
     return cell
   }
   
