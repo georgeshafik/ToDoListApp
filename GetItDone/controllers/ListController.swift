@@ -89,7 +89,7 @@ class ListController: UIViewController, GDHeaderDelegate, GDNewItemDelegate {
     
     listTable.delegate = self
     listTable.dataSource = self
-    listTable.register(GDListCell.self, forCellReuseIdentifier: CELL_ID) // need to register a cell
+    listTable.register(GDListCell.self, forCellReuseIdentifier: CELL_ID) // Registed GDListCell to listTable
   }
   
 }
@@ -119,6 +119,10 @@ extension ListController: UITableViewDelegate, UITableViewDataSource {
 //    cell.textLabel?.text = listData[indexPath.row].title
     cell.toDo = self.listData[indexPath.row] // the assignement statment triggers of the set method which in term sets the title in the cell
     return cell
+  }
+  
+  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    return 40
   }
   
 }
