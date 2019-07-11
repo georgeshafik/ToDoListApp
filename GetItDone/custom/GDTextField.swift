@@ -10,13 +10,29 @@ import UIKit
 
 class GDTextField:UITextField {
   
-  init(frame:CGRect = .zero, placeholder:String = "placeholder", radius:CGFloat = 4) {
+  var insets:UIEdgeInsets!
+  
+  init(frame:CGRect = .zero, placeholder:String = "placeholder", radius:CGFloat = 4, inset:CGFloat = 0) {
     super.init(frame: .zero)
     self.checkIfAutoLayout()
     
     self.placeholder = placeholder // UITextField actuall has a field also called placeholder
     self.backgroundColor = .white
     self.layer.cornerRadius = radius
+    self.insets = UIEdgeInsets(top: 0, left: inset, bottom: 0, right: 0)
+    self.textColor = .grayZero
+  }
+    
+  override open func textRect(forBounds bounds: CGRect) -> CGRect {
+    return bounds.inset(by: insets)
+  }
+  
+  override open func placeholderRect(forBounds bounds: CGRect) -> CGRect {
+    return bounds.inset(by: insets)
+  }
+  
+  override open func editingRect(forBounds bounds: CGRect) -> CGRect {
+    return bounds.inset(by: insets)
   }
   
   required init?(coder aDecoder: NSCoder) {

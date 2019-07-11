@@ -12,15 +12,15 @@ class NewItemPopup:GDGradient {
   
   let cancel = GDButton(title: "  cancel  ", type: .roundedText, radius: 4)
   let add = GDButton(title: "  add  ", type: .roundedText, radius: 4)
-  let textField = GDTextField(placeholder: "  go buy Ikea frames  ")
+  let textField = GDTextField(placeholder: "  go buy Ikea frames  ", inset: 6)
   
   @objc func handleCancel() {
-    cancel.animateButtonClick()
+    cancel.animateButtonClick() //factored button click press behaviour UIButton extension
     print("Cancel button clicked")
   }
   
   @objc func handleAdd() {
-    add.animateButtonClick()
+    add.animateButtonClick() //factored button click press behaviour UIButton extension
     print("Add button clicked")
   }
   
