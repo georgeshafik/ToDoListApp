@@ -57,7 +57,7 @@ class GDHeaderView: UIView {
     // this will call the addItem method implmented in class ListController that
     // references the protocol GDHeaderDelegate
     if let delegate = self.delegate {
-      delegate.addItem()
+      delegate.openAddItemPopup()
     }
   
   }

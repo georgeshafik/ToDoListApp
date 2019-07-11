@@ -8,11 +8,12 @@
 
 import UIKit
 
-class NewItemPopup:GDGradient {
+class GDNewItemPopup:GDGradient {
   
   let cancel = GDButton(title: "  cancel  ", type: .roundedText, radius: 4)
   let add = GDButton(title: "  add  ", type: .roundedText, radius: 4)
   let textField = GDTextField(placeholder: "  go buy Ikea frames  ", inset: 6)
+  var delegate:GDNewItemDelegate?
   
   @objc func handleCancel() {
     cancel.animateButtonClick() //factored button click press behaviour UIButton extension
@@ -21,7 +22,13 @@ class NewItemPopup:GDGradient {
   
   @objc func handleAdd() {
     add.animateButtonClick() //factored button click press behaviour UIButton extension
-    print("Add button clicked")
+    print("Add button clicked - from @objc func handleAdd()")
+    // here we are check if there is a delegate assigned before call the method addItemToList
+    // the if let condition assigns self.delegate to delegate if one is assigned and executes the condition
+    // if no delegate is assign then the if conditionn fails and nothing crashes
+    if let delegate = self.delegate {
+      delegate.addItemToList()
+    }
   }
   
   override init(frame: CGRect) {

@@ -23,7 +23,7 @@
 		67C87AC622D5E580004D537E /* GDHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C87AC522D5E580004D537E /* GDHeaderView.swift */; };
 		67C87AC922D5F868004D537E /* optionset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C87AC822D5F868004D537E /* optionset.swift */; };
 		67C87ACB22D613E4004D537E /* protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C87ACA22D613E4004D537E /* protocol.swift */; };
-		67C87ACD22D61926004D537E /* NewItemPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C87ACC22D61926004D537E /* NewItemPopup.swift */; };
+		67C87ACD22D61926004D537E /* GDNewItemPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C87ACC22D61926004D537E /* GDNewItemPopup.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,7 +45,7 @@
 		67C87AC522D5E580004D537E /* GDHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDHeaderView.swift; sourceTree = "<group>"; };
 		67C87AC822D5F868004D537E /* optionset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = optionset.swift; sourceTree = "<group>"; };
 		67C87ACA22D613E4004D537E /* protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = protocol.swift; sourceTree = "<group>"; };
-		67C87ACC22D61926004D537E /* NewItemPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemPopup.swift; sourceTree = "<group>"; };
+		67C87ACC22D61926004D537E /* GDNewItemPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDNewItemPopup.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +108,7 @@
 				67C87AB822D5ABB0004D537E /* GDLabel.swift */,
 				67C87AC122D5D5D2004D537E /* GDButton.swift */,
 				67C87AC522D5E580004D537E /* GDHeaderView.swift */,
-				67C87ACC22D61926004D537E /* NewItemPopup.swift */,
+				67C87ACC22D61926004D537E /* GDNewItemPopup.swift */,
 				67679F2322D6ABD500709C8B /* GDTextField.swift */,
 			);
 			path = custom;
@@ -211,7 +211,7 @@
 				67C87AB922D5ABB0004D537E /* GDLabel.swift in Sources */,
 				67C87A9822D58E00004D537E /* extension.swift in Sources */,
 				67679F2422D6ABD500709C8B /* GDTextField.swift in Sources */,
-				67C87ACD22D61926004D537E /* NewItemPopup.swift in Sources */,
+				67C87ACD22D61926004D537E /* GDNewItemPopup.swift in Sources */,
 				67C87AC622D5E580004D537E /* GDHeaderView.swift in Sources */,
 				67C87AC922D5F868004D537E /* optionset.swift in Sources */,
 				67C87ACB22D613E4004D537E /* protocol.swift in Sources */,

@@ -8,13 +8,18 @@
 
 import UIKit
 
-class ListController: UIViewController, GDHeaderDelegate {
-  func addItem() {
-    print("trying to add item from header")
+class ListController: UIViewController, GDHeaderDelegate, GDNewItemDelegate {
+ 
+  func openAddItemPopup() {
+    print("trying to open add item popup view - from func openAddItemPopup()")
+  }
+  
+  func addItemToList() {
+    print("trying to add item to the list - from func addItemToList()")
   }
   
   let header = GDHeaderView(title: "Stuff to get done", subtitle: "4 left")
-  let popup = NewItemPopup()
+  let popup = GDNewItemPopup()
   
   var keyboardHeight:CGFloat = 350
   
@@ -45,6 +50,8 @@ class ListController: UIViewController, GDHeaderDelegate {
     popup.heightAnchor.constraint(equalToConstant: 80).isActive = true
     
     popup.textField.delegate = self // now we access to the textfield delegate inside our listcontroller
+    
+    popup.delegate = self
     
     header.delegate = self
   }
