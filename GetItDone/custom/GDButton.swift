@@ -63,17 +63,6 @@ class GDButton:UIButton {
   }
   
   
-  func buttonEffect() {
-    // Refactor this into GDButton class - function takes two arguments a button and function parameter
-    // function parameter will be the action to exect at the end of the effect
-    UIView.animate(withDuration: 0.1, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 1, options: .curveEaseIn, animations: {
-      self.transform = CGAffineTransform(scaleX: 0.92, y: 0.92)
-    }) { (_) in
-      // And then re-size batck to it's original size slowly
-      UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 1, options: .curveEaseIn, animations: {
-        self.transform = CGAffineTransform(scaleX: 1, y: 1)
-      })
-    }
-  }
+
   
 }

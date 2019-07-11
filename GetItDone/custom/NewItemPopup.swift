@@ -12,14 +12,15 @@ class NewItemPopup:GDGradient {
   
   let cancel = GDButton(title: "  cancel  ", type: .roundedText, radius: 4)
   let add = GDButton(title: "  add  ", type: .roundedText, radius: 4)
+  let textField = GDTextField(placeholder: "  go buy Ikea frames  ")
   
   @objc func handleCancel() {
-    cancel.buttonEffect()
+    cancel.animateButtonClick()
     print("Cancel button clicked")
   }
   
   @objc func handleAdd() {
-    add.buttonEffect()
+    add.animateButtonClick()
     print("Add button clicked")
   }
   
@@ -43,6 +44,13 @@ class NewItemPopup:GDGradient {
     add.heightAnchor.constraint(equalToConstant: 20).isActive = true
 
     add.addTarget(self, action: #selector(self.handleAdd), for: .touchUpInside)
+    
+    addSubview(textField)
+    textField.topAnchor.constraint(equalTo: add.bottomAnchor, constant: 8).isActive = true
+    textField.leftAnchor.constraint(equalTo: leftAnchor, constant: inset).isActive = true
+    textField.rightAnchor.constraint(equalTo: rightAnchor, constant: inset).isActive = true
+    textField.heightAnchor.constraint(equalToConstant: 32).isActive = true
+    
   }
   
   required init?(coder aDecoder: NSCoder) {
