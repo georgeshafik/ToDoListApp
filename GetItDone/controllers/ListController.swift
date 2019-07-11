@@ -18,17 +18,21 @@ class ListController: UIViewController, GDHeaderDelegate, GDNewItemDelegate {
     print("text in texfield is \(text)")
   }
   
-  let header = GDHeaderView(title: "Stuff to get done", subtitle: "4 left")
   
+  // ******** ListController UI Controls
+  
+  let header = GDHeaderView(title: "Stuff to get done", subtitle: "4 left")
   let bg:UIView = {
     let view = GDGradient() // this is a type of UIView!
     view.layer.cornerRadius = 24
     return view
   }()
-  
   let listTable = GDTableView()
-  
   let popup = GDNewItemPopup()
+  
+  // ************************************
+  
+  let CELL_ID = "cell_id"
   
   var keyboardHeight:CGFloat = 350
   
@@ -76,6 +80,10 @@ class ListController: UIViewController, GDHeaderDelegate, GDNewItemDelegate {
     popup.delegate = self
     
     header.delegate = self
+    
+    listTable.delegate = self
+    listTable.dataSource = self
+    listTable.register(UITableViewCell.self, forCellReuseIdentifier: CELL_ID) // need to register a cell
   }
   
 }
@@ -92,4 +100,18 @@ extension ListController: UITextFieldDelegate {
   func textFieldDidEndEditing(_ textField: UITextField) {
     popup.animateView(transform: CGAffineTransform(translationX: 0, y: 0), duration: 0.6)
   }
+}
+
+extension ListController: UITableViewDelegate, UITableViewDataSource {
+  
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return 3
+  }
+  
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: CELL_ID, for: indexPath)
+    cell.textLabel?.text = "hello in a cell boi"
+    return cell
+  }
+  
 }
