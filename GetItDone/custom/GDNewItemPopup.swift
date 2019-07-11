@@ -18,6 +18,7 @@ class GDNewItemPopup:GDGradient {
   @objc func handleCancel() {
     cancel.animateButtonClick() //factored button click press behaviour UIButton extension
     print("Cancel button clicked")
+    textField.resignFirstResponder()
   }
   
   @objc func handleAdd() {
