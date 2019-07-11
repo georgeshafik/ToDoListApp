@@ -16,7 +16,7 @@ class GDTextField:UITextField {
     super.init(frame: .zero)
     self.checkIfAutoLayout()
     
-    self.placeholder = placeholder // UITextField actuall has a field also called placeholder
+    self.placeholder = placeholder // UITextField actually has a field also called placeholder
     self.backgroundColor = .white
     self.layer.cornerRadius = radius
     self.insets = UIEdgeInsets(top: 0, left: inset, bottom: 0, right: 0)

@@ -16,6 +16,18 @@ class ListController: UIViewController, GDHeaderDelegate {
   let header = GDHeaderView(title: "Stuff to get done", subtitle: "4 left")
   let popup = NewItemPopup()
   
+  var keyboardHeight:CGFloat = 0
+  
+  override func viewDidAppear(_ animated: Bool) {
+    NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardDidShowNotification, object: nil)
+  }
+  
+  @objc func keyboardWillShow(notification: Notification) {
+    let keyboardSize = (notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue.size
+    self.keyboardHeight = keyboardSize.height
+    print("Keyboard height \(self.keyboardHeight)")
+  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     view.backgroundColor = .white
@@ -35,4 +47,5 @@ class ListController: UIViewController, GDHeaderDelegate {
     
     header.delegate = self
   }
+  
 }
