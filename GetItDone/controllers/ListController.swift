@@ -25,7 +25,13 @@ class ListController: UIViewController, GDHeaderDelegate {
   @objc func keyboardWillShow(notification: Notification) {
     let keyboardSize = (notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue.size
     self.keyboardHeight = keyboardSize.height
-    print("Keyboard height \(self.keyboardHeight)")
+//    print("Keyboard height \(self.keyboardHeight)")
+    
+    
+    UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.85,
+     initialSpringVelocity: 2, options: .curveEaseIn, animations: {
+      self.popup.transform = CGAffineTransform(translationX: 0, y: -self.keyboardHeight)
+    }, completion: nil)
   }
   
   override func viewDidLoad() {
