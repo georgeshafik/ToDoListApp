@@ -34,7 +34,11 @@ class ListController: UIViewController, GDHeaderDelegate, GDNewItemDelegate {
   
   let CELL_ID = "cell_id"
   
-  var listData = ["first item","Hey dood","It's Lit fan"]
+  var listData = [
+    ToDo(id: 0, title: "first item", status: false),
+    ToDo(id: 1, title: "hey dood", status: false),
+    ToDo(id: 2, title: "Its lit yo", status: false)
+  ]
   
   var keyboardHeight:CGFloat = 350
   
@@ -112,7 +116,7 @@ extension ListController: UITableViewDelegate, UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: CELL_ID, for: indexPath) as! GDListCell
-    cell.textLabel?.text = listData[indexPath.row]
+    cell.textLabel?.text = listData[indexPath.row].title
 
     return cell
   }

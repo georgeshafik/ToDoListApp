@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6720C69222D7280800FAD50D /* GDTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6720C69122D7280800FAD50D /* GDTableView.swift */; };
 		6720C69422D745F500FAD50D /* GDListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6720C69322D745F500FAD50D /* GDListCell.swift */; };
+		6720C69722D74F7900FAD50D /* toDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6720C69622D74F7900FAD50D /* toDo.swift */; };
 		67226CDE22D560BF008489C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67226CDD22D560BF008489C7 /* AppDelegate.swift */; };
 		67226CE022D560BF008489C7 /* WelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67226CDF22D560BF008489C7 /* WelcomeController.swift */; };
 		67226CE622D560BF008489C7 /* GetItDone.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 67226CE422D560BF008489C7 /* GetItDone.xcdatamodeld */; };
@@ -31,6 +32,7 @@
 /* Begin PBXFileReference section */
 		6720C69122D7280800FAD50D /* GDTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDTableView.swift; sourceTree = "<group>"; };
 		6720C69322D745F500FAD50D /* GDListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDListCell.swift; sourceTree = "<group>"; };
+		6720C69622D74F7900FAD50D /* toDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toDo.swift; sourceTree = "<group>"; };
 		67226CDA22D560BF008489C7 /* GetItDone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GetItDone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67226CDD22D560BF008489C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		67226CDF22D560BF008489C7 /* WelcomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeController.swift; sourceTree = "<group>"; };
@@ -63,6 +65,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6720C69522D74F3E00FAD50D /* model */ = {
+			isa = PBXGroup;
+			children = (
+				6720C69622D74F7900FAD50D /* toDo.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
 		67226CD122D560BF008489C7 = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +97,7 @@
 				67C87A9622D58DCD004D537E /* extension */,
 				67C87AB722D5AB70004D537E /* custom */,
 				67C87AC722D5EAFC004D537E /* controllers */,
+				6720C69522D74F3E00FAD50D /* model */,
 				67226CE722D560C1008489C7 /* Assets.xcassets */,
 				67226CE922D560C1008489C7 /* LaunchScreen.storyboard */,
 				67226CEC22D560C1008489C7 /* Info.plist */,
@@ -221,6 +232,7 @@
 				67C87ACD22D61926004D537E /* GDNewItemPopup.swift in Sources */,
 				6720C69222D7280800FAD50D /* GDTableView.swift in Sources */,
 				67C87AC622D5E580004D537E /* GDHeaderView.swift in Sources */,
+				6720C69722D74F7900FAD50D /* toDo.swift in Sources */,
 				67C87AC922D5F868004D537E /* optionset.swift in Sources */,
 				67C87ACB22D613E4004D537E /* protocol.swift in Sources */,
 				67226CDE22D560BF008489C7 /* AppDelegate.swift in Sources */,
