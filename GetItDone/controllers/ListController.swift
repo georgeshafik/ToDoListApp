@@ -85,7 +85,7 @@ class ListController: UIViewController, GDHeaderDelegate, GDNewItemDelegate {
     
     listTable.delegate = self
     listTable.dataSource = self
-    listTable.register(UITableViewCell.self, forCellReuseIdentifier: CELL_ID) // need to register a cell
+    listTable.register(GDListCell.self, forCellReuseIdentifier: CELL_ID) // need to register a cell
   }
   
 }
@@ -111,11 +111,9 @@ extension ListController: UITableViewDelegate, UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: CELL_ID, for: indexPath)
+    let cell = tableView.dequeueReusableCell(withIdentifier: CELL_ID, for: indexPath) as! GDListCell
     cell.textLabel?.text = listData[indexPath.row]
-    cell.selectionStyle = .none
-    cell.backgroundColor = .white
-    cell.textLabel?.textColor = .grayZero
+
     return cell
   }
   
