@@ -14,8 +14,8 @@ class ListController: UIViewController, GDHeaderDelegate, GDNewItemDelegate {
     print("trying to open add item popup view - from func openAddItemPopup()")
   }
   
-  func addItemToList() {
-    print("trying to add item to the list - from func addItemToList()")
+  func addItemToList(text:String) {
+    print("text in texfield is \(text)")
   }
   
   let header = GDHeaderView(title: "Stuff to get done", subtitle: "4 left")

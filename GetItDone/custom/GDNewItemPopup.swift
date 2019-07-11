@@ -21,13 +21,23 @@ class GDNewItemPopup:GDGradient {
   }
   
   @objc func handleAdd() {
+    
     add.animateButtonClick() //factored button click press behaviour UIButton extension
     print("Add button clicked - from @objc func handleAdd()")
     // here we are check if there is a delegate assigned before call the method addItemToList
     // the if let condition assigns self.delegate to delegate if one is assigned and executes the condition
     // if no delegate is assign then the if conditionn fails and nothing crashes
-    if let delegate = self.delegate {
-      delegate.addItemToList()
+    //
+    // NOTE this both unwraps it and test if it is nil
+    // let textFieldText = self.textField.text
+    // so it if it fails then delegate.addItemToList(text: textFieldText) will not be calledf
+    //
+    // NOTE both let delegate = self.delegate, let textFieldText = self.textField.text need to evaluate to true
+    // so the if condition allows delegate.addItemToList(text: textFieldText)
+    // so delegate and textFieldText are the unwrapped values
+    //
+    if let delegate = self.delegate, let textFieldText = self.textField.text {
+      delegate.addItemToList(text: textFieldText)
     }
   }
   
