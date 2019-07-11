@@ -116,8 +116,8 @@ extension ListController: UITableViewDelegate, UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: CELL_ID, for: indexPath) as! GDListCell
-    cell.textLabel?.text = listData[indexPath.row].title
-
+//    cell.textLabel?.text = listData[indexPath.row].title
+    cell.toDo = self.listData[indexPath.row] // the assignement statment triggers of the set method which in term sets the title in the cell
     return cell
   }
   
