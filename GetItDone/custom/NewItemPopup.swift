@@ -27,7 +27,7 @@ class NewItemPopup:GDGradient {
   override init(frame: CGRect) {
     super.init(frame: frame)
     
-    let inset:CGFloat = 16
+    let inset:CGFloat = 12
     
     self.layer.cornerRadius = 14
     
@@ -48,8 +48,8 @@ class NewItemPopup:GDGradient {
     addSubview(textField)
     textField.topAnchor.constraint(equalTo: add.bottomAnchor, constant: 8).isActive = true
     textField.leftAnchor.constraint(equalTo: leftAnchor, constant: inset).isActive = true
-    textField.rightAnchor.constraint(equalTo: rightAnchor, constant: inset).isActive = true
-    textField.heightAnchor.constraint(equalToConstant: 32).isActive = true
+    textField.rightAnchor.constraint(equalTo: rightAnchor, constant: inset * -1).isActive = true
+    textField.heightAnchor.constraint(equalToConstant: 28).isActive = true
     
   }
   
