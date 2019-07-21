@@ -10,14 +10,23 @@ import UIKit
 
 class GDListCell:UITableViewCell {
   
-  let titleLabel = GDLabel(color: .grayZero, size: 14)
+//  let titleLabel = GDLabel(color: .grayZero, size: 14)
+  let textField = GDTextField(placeholder: "ToDo", radius: 0, inset: 14)
+  
+  // The reason we are using a view is because we want the text to be more inset
+  let view:UIView = {
+    let view = UIView()
+    view.translatesAutoresizingMaskIntoConstraints = false
+    return view
+  }()
+  
   
   var toDo:ToDo? {
     didSet {
       if let toDo = toDo {
         print(toDo.status)
         
-        self.titleLabel.text = toDo.title
+        self.textField.text = toDo.title
       }
     }
   }
@@ -29,13 +38,19 @@ class GDListCell:UITableViewCell {
     selectionStyle = .none
     backgroundColor = .clear
     
-    addSubview(titleLabel)
-    titleLabel.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
-    titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 4).isActive = true
-    titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -4).isActive = true
-    titleLabel.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
+    view.backgroundColor = .white
     
-    titleLabel.backgroundColor = .white
+    addSubview(view)
+    view.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
+    view.topAnchor.constraint(equalTo: topAnchor, constant: 3).isActive = true
+    view.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -3).isActive = true
+    view.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
+    
+    view.addSubview(textField)
+    textField.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
+    textField.topAnchor.constraint(equalTo: topAnchor, constant: 6).isActive = true
+    textField.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -6).isActive = true
+    textField.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
   }
   
   required init?(coder aDecoder: NSCoder) {

@@ -18,8 +18,7 @@ class ListController: UIViewController, GDHeaderDelegate, GDNewItemDelegate {
     print("text in texfield is \(text)")
   }
   
-  
-  // ******** ListController UI Controls
+  // MARK: - ListController and UI Controls
   
   let header = GDHeaderView(title: "Stuff to get done", subtitle: "4 left")
   let bg:UIView = {
@@ -29,8 +28,6 @@ class ListController: UIViewController, GDHeaderDelegate, GDNewItemDelegate {
   }()
   let listTable = GDTableView()
   let popup = GDNewItemPopup()
-  
-  // ************************************
   
   let CELL_ID = "cell_id"
   
@@ -50,6 +47,8 @@ class ListController: UIViewController, GDHeaderDelegate, GDNewItemDelegate {
     let keyboardSize = (notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue.size
     self.keyboardHeight = keyboardSize.height
   }
+  
+  // MARK: - View LifeCycle
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -94,6 +93,7 @@ class ListController: UIViewController, GDHeaderDelegate, GDNewItemDelegate {
   
 }
 
+// MARK: - ListController UITextFieldDelegate
 
 // Special note on how we added the delegate to our list controller via an extension declaration instetad of adding to the above
 // class ListController: UIViewController, GDHeaderDelegate, UITextFieldDelegate
@@ -108,6 +108,8 @@ extension ListController: UITextFieldDelegate {
   }
 }
 
+// MARK: - ListController UITableViewDelegate, UITableViewDataSource
+
 extension ListController: UITableViewDelegate, UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -121,8 +123,9 @@ extension ListController: UITableViewDelegate, UITableViewDataSource {
     return cell
   }
   
+  // Set height of table view row
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    return 40
+    return 44
   }
   
 }
