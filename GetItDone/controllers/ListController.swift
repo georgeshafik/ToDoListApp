@@ -19,13 +19,17 @@ class ListController: UIViewController, GDHeaderDelegate, GDNewItemDelegate {
   }
   
   // MARK: - ListController and UI Controls
-  
+
   let header = GDHeaderView(title: "Stuff to get done", subtitle: "4 left")
-  let bg:UIView = {
+  let tbInset:CGFloat = 16
+  
+  // Note is a lazy var so tbInset is initialised
+  lazy var bg:UIView = {
     let view = GDGradient() // this is a type of UIView!
-    view.layer.cornerRadius = 24
+    view.layer.cornerRadius = tbInset // it is a lazy var so we wait for tbInset to get initialised first before we can initialise bg
     return view
   }()
+  
   let listTable = GDTableView()
   let popup = GDNewItemPopup()
   
@@ -69,10 +73,10 @@ class ListController: UIViewController, GDHeaderDelegate, GDNewItemDelegate {
     bg.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true // 20 pixels from right
     
     view.addSubview(listTable)
-    listTable.leftAnchor.constraint(equalTo: bg.leftAnchor, constant: 8).isActive = true
-    listTable.topAnchor.constraint(equalTo: bg.topAnchor, constant: 8).isActive = true
-    listTable.bottomAnchor.constraint(equalTo: bg.bottomAnchor, constant: -8).isActive = true
-    listTable.rightAnchor.constraint(equalTo: bg.rightAnchor, constant: -8).isActive = true 
+    listTable.leftAnchor.constraint(equalTo: bg.leftAnchor, constant: tbInset).isActive = true
+    listTable.topAnchor.constraint(equalTo: bg.topAnchor, constant: tbInset).isActive = true
+    listTable.bottomAnchor.constraint(equalTo: bg.bottomAnchor, constant: tbInset * -1).isActive = true
+    listTable.rightAnchor.constraint(equalTo: bg.rightAnchor, constant: tbInset * -1).isActive = true
     
     view.addSubview(popup)
     popup.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
@@ -125,7 +129,7 @@ extension ListController: UITableViewDelegate, UITableViewDataSource {
   
   // Set height of table view row
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    return 44
+    return 42
   }
   
 }
