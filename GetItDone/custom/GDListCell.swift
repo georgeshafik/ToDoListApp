@@ -27,6 +27,7 @@ class GDListCell:UITableViewCell {
       if let toDo = toDo {
         print(toDo.status)
         box.toggled = toDo.status
+        box.id = toDo.id
         self.textField.text = toDo.title
       }
     }
