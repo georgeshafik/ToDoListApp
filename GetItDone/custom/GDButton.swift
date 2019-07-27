@@ -28,8 +28,8 @@ class GDButton:UIButton {
   }
   
   func phaseTwo() {
-      self.setTitle(self.title, for: .normal)
-      self.setTitleColor(.grayZero, for: .normal)
+//      self.setTitle(self.title, for: .normal)
+//      self.setTitleColor(.grayZero, for: .normal)
       self.backgroundColor = .white
 
       if let titleLabel = self.titleLabel {
@@ -47,13 +47,16 @@ class GDButton:UIButton {
   
   func squareIcon() {
     // thiw is where we will set the customer icons
-    if let titleLabel = self.titleLabel {
-      titleLabel.font = UIFont.init(name: "Raleway-Regular", size: 24)
-    }
+//    if let titleLabel = self.titleLabel {
+//      titleLabel.font = UIFont.init(name: "Raleway-Regular", size: 24)
+//    }
+    self.setImage(UIImage(named: "add-icon"), for: .normal)
     
   }
   
   func roundedText() {
+    self.setTitle(self.title, for: .normal)
+    self.setTitleColor(.grayZero, for: .normal)
     //self.layer.cornerRadius = 20 // half the height
     self.layer.cornerRadius = self.radius
   }
