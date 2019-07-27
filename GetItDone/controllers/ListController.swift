@@ -114,7 +114,12 @@ extension ListController: UITextFieldDelegate {
 
 // MARK: - ListController UITableViewDelegate, UITableViewDataSource
 
-extension ListController: UITableViewDelegate, UITableViewDataSource {
+extension ListController: UITableViewDelegate, UITableViewDataSource, GDListCellDelegate {
+  
+  func toggleTodo(status: Bool) {
+    print("Trying to toggle todo in DB")
+  }
+  
   
   func numberOfSections(in tableView: UITableView) -> Int {
     return 2
@@ -161,6 +166,9 @@ extension ListController: UITableViewDelegate, UITableViewDataSource {
 //    cell.textLabel?.text = listData[indexPath.row].title
     cell.toDo = self.listData[indexPath.row] // the assignement statment triggers of the set method which in term sets the title in the cell
  
+    // the box in the cell is assigned as the delegate
+    cell.box.delegate = self
+    
     var itemsForSection:[ToDo] = []
     self.listData.forEach { (toDo) in
       if (indexPath.section == 0 && !toDo.status) {
@@ -170,7 +178,7 @@ extension ListController: UITableViewDelegate, UITableViewDataSource {
       }
     }
     
-    cell.toDo = itemsForSection[indexPath.row]    
+    cell.toDo = itemsForSection[indexPath.row]
     return cell
   }
   
