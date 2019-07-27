@@ -10,6 +10,19 @@ import UIKit
 
 class GDCheckBox:UIButton {
   
+  var toggled:Bool? {
+    didSet {
+      if let toggled = toggled {
+
+        if toggled {
+          backgroundColor = .green
+        } else {
+          backgroundColor = .clear
+        }
+      }
+    }
+  }
+  
   override init(frame: CGRect) {
     super.init(frame: .zero)
     translatesAutoresizingMaskIntoConstraints = false

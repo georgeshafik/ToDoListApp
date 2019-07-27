@@ -37,8 +37,8 @@ class ListController: UIViewController, GDHeaderDelegate, GDNewItemDelegate {
   
   var listData = [
     ToDo(id: 0, title: "first item", status: false),
-    ToDo(id: 1, title: "hey dood", status: false),
-    ToDo(id: 2, title: "Its lit yo", status: false)
+    ToDo(id: 1, title: "hey dood", status: true),
+    ToDo(id: 2, title: "Its lit yo", status: true)
   ]
   
   var keyboardHeight:CGFloat = 350
