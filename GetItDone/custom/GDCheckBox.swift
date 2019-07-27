@@ -30,6 +30,7 @@ class GDCheckBox:UIButton {
     }
   }
   
+  // SPECIAL NOTE: Connecting the checkbox
   @objc func toggleStatus() {
     if let status = toggled,
       let delegate = self.delegate, let id = self.id {

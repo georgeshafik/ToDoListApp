@@ -116,6 +116,7 @@ extension ListController: UITextFieldDelegate {
 
 extension ListController: UITableViewDelegate, UITableViewDataSource, GDListCellDelegate {
   
+  // SPECIAL NOTE: Connecting the checkbox
   func toggleTodo(id:Int, status: Bool) {
     //print(id, status)
     
@@ -124,10 +125,13 @@ extension ListController: UITableViewDelegate, UITableViewDataSource, GDListCell
       if toDo.id == id {
         var newToDo = toDo
         newToDo.status = status
+        print("toggleTodo - 1")
         return newToDo
       }
+      print("toggleTodo - 2")
       return toDo
     }
+    print("toggleTodo - 3")
     self.listData = newistData
     self.listTable.reloadData()
   }
@@ -178,10 +182,13 @@ extension ListController: UITableViewDelegate, UITableViewDataSource, GDListCell
 //    cell.textLabel?.text = listData[indexPath.row].title
     cell.toDo = self.listData[indexPath.row] // the assignement statment triggers of the set method which in term sets the title in the cell
  
-    // the box in the cell is assigned as the delegate
+    // SPECIAL NOTE: Connecting the checkbox
+    // The box in the cell is assigned as the delegate
+    // when the checkbox is selected
     cell.box.delegate = self
     
     var itemsForSection:[ToDo] = []
+    
     self.listData.forEach { (toDo) in
       if (indexPath.section == 0 && !toDo.status) {
         itemsForSection.append(toDo)
