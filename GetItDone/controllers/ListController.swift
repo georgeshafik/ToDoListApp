@@ -160,6 +160,17 @@ extension ListController: UITableViewDelegate, UITableViewDataSource {
     let cell = tableView.dequeueReusableCell(withIdentifier: CELL_ID, for: indexPath) as! GDListCell
 //    cell.textLabel?.text = listData[indexPath.row].title
     cell.toDo = self.listData[indexPath.row] // the assignement statment triggers of the set method which in term sets the title in the cell
+ 
+    var itemsForSection:[ToDo] = []
+    self.listData.forEach { (toDo) in
+      if (indexPath.section == 0 && !toDo.status) {
+        itemsForSection.append(toDo)
+      } else if (indexPath.section == 1 && toDo.status) {
+        itemsForSection.append(toDo)
+      }
+    }
+    
+    cell.toDo = itemsForSection[indexPath.row]    
     return cell
   }
   
