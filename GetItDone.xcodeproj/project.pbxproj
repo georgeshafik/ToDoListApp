@@ -27,6 +27,7 @@
 		67C87AC922D5F868004D537E /* optionset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C87AC822D5F868004D537E /* optionset.swift */; };
 		67C87ACB22D613E4004D537E /* protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C87ACA22D613E4004D537E /* protocol.swift */; };
 		67C87ACD22D61926004D537E /* GDNewItemPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C87ACC22D61926004D537E /* GDNewItemPopup.swift */; };
+		67D811A522EBC76C004BCEF4 /* GDCheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D811A422EBC76C004BCEF4 /* GDCheckBox.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		67C87AC822D5F868004D537E /* optionset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = optionset.swift; sourceTree = "<group>"; };
 		67C87ACA22D613E4004D537E /* protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = protocol.swift; sourceTree = "<group>"; };
 		67C87ACC22D61926004D537E /* GDNewItemPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDNewItemPopup.swift; sourceTree = "<group>"; };
+		67D811A422EBC76C004BCEF4 /* GDCheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDCheckBox.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 				67679F2322D6ABD500709C8B /* GDTextField.swift */,
 				6720C69122D7280800FAD50D /* GDTableView.swift */,
 				6720C69322D745F500FAD50D /* GDListCell.swift */,
+				67D811A422EBC76C004BCEF4 /* GDCheckBox.swift */,
 			);
 			path = custom;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 				67C87A9522D5898B004D537E /* GDGradient.swift in Sources */,
 				6720C69422D745F500FAD50D /* GDListCell.swift in Sources */,
 				67C87AC222D5D5D2004D537E /* GDButton.swift in Sources */,
+				67D811A522EBC76C004BCEF4 /* GDCheckBox.swift in Sources */,
 				67226CE022D560BF008489C7 /* WelcomeController.swift in Sources */,
 				67226CE622D560BF008489C7 /* GetItDone.xcdatamodeld in Sources */,
 				67C87AB922D5ABB0004D537E /* GDLabel.swift in Sources */,

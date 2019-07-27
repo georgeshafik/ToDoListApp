@@ -20,6 +20,7 @@ class GDListCell:UITableViewCell {
     return view
   }()
   
+  let box = GDCheckBox()
   
   var toDo:ToDo? {
     didSet {
@@ -51,6 +52,18 @@ class GDListCell:UITableViewCell {
     textField.topAnchor.constraint(equalTo: topAnchor, constant: 6).isActive = true
     textField.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -6).isActive = true
     textField.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
+    
+    addSubview(box)
+    box.rightAnchor.constraint(equalTo: rightAnchor, constant: -14).isActive = true
+    // we know height of cell is 42
+    // removing 6 from top and bottom 12 in total maning the hight of our box is 30
+    //box.topAnchor.constraint(equalTo: topAnchor, constant: 6).isActive = true
+    //box.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -6).isActive = true
+    //
+    // This appeach centers it, sets width and height
+    box.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+    box.widthAnchor.constraint(equalToConstant: 22).isActive = true
+    box.heightAnchor.constraint(equalTo: box.widthAnchor).isActive = true
   }
   
   required init?(coder aDecoder: NSCoder) {
