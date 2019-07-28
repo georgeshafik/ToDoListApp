@@ -17,8 +17,20 @@ class GDNewItemPopup:GDGradient {
   
   @objc func handleCancel() {
     cancel.animateButtonClick() //factored button click press behaviour UIButton extension
-    print("Cancel button clicked")
+    animatePopup()
     textField.resignFirstResponder()
+  }
+  
+  var popupLocation:CGFloat = 70
+  
+  @objc func animatePopup() {
+    self.animateView(transform: CGAffineTransform(translationX: 0, y: popupLocation), duration: 0.3)
+    
+    if popupLocation == 70 {
+      popupLocation = 0
+    } else {
+      popupLocation = 70
+    }
   }
   
   @objc func handleAdd() {
@@ -44,6 +56,10 @@ class GDNewItemPopup:GDGradient {
   
   override init(frame: CGRect) {
     super.init(frame: frame)
+    
+    // Now when we click on the little fragment of blue of the plannel at the bottom of the screen
+    // that holds the cancel and add todo items it will now popup
+    self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.animatePopup)))
     
     let inset:CGFloat = 12
     
