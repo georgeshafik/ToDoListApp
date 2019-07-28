@@ -36,17 +36,17 @@ class GDHeaderView: UIView {
     
     addSubview(titleLabel)
     titleLabel.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 14).isActive = true
-    titleLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 20 + 8).isActive = true
+    titleLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 20 + 16).isActive = true
     titleLabel.rightAnchor.constraint(equalTo: centerXAnchor).isActive = true
     
     addSubview(subtitleLabel)
     subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor).isActive = true
-    subtitleLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 20 + 8).isActive = true
+    subtitleLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 20 + 16).isActive = true
     subtitleLabel.rightAnchor.constraint(equalTo: centerXAnchor, constant: 50).isActive = true
     
     addSubview(addButton)
     addButton.bottomAnchor.constraint(equalTo: subtitleLabel.bottomAnchor).isActive = true
-    addButton.rightAnchor.constraint(equalTo: rightAnchor, constant: -20 - 8).isActive = true
+    addButton.rightAnchor.constraint(equalTo: rightAnchor, constant: -20 - 16 - 14).isActive = true
     addButton.heightAnchor.constraint(equalToConstant: 24).isActive = true
     addButton.widthAnchor.constraint(equalTo: addButton.heightAnchor, multiplier: 1).isActive = true // it will take the height of heightAnchor and multiply it by 1 so the width in this case is 24 * 1 - a square
     
