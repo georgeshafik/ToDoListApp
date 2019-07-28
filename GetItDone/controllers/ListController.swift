@@ -10,8 +10,16 @@ import UIKit
 
 class ListController: UIViewController, GDHeaderDelegate, GDNewItemDelegate {
  
+  var popupLocation:CGFloat = 70
+  
   func openAddItemPopup() {
-    print("trying to open add item popup view - from func openAddItemPopup()")
+    popup.animateView(transform: CGAffineTransform(translationX: 0, y: popupLocation), duration: 0.3)
+    
+    if popupLocation == 70 {
+      popupLocation = 0
+    } else {
+      popupLocation = 70
+    }
   }
   
   func addItemToList(text:String) {
@@ -95,6 +103,8 @@ class ListController: UIViewController, GDHeaderDelegate, GDNewItemDelegate {
     popup.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
     popup.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
     popup.heightAnchor.constraint(equalToConstant: 80).isActive = true
+    
+    openAddItemPopup()
     
     popup.textField.delegate = self // now we access to the textfield delegate inside our listcontroller
     
