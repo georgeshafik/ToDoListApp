@@ -48,6 +48,8 @@ class GDNewItemPopup:GDGradient {
     let inset:CGFloat = 12
     
     self.layer.cornerRadius = 16
+//    self.layer.masksToBounds = true
+    self.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner] // left and right corners only
     
     addSubview(cancel)
     cancel.leftAnchor.constraint(equalTo: leftAnchor, constant: inset).isActive = true
