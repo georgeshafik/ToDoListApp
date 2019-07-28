@@ -17,5 +17,5 @@ protocol GDNewItemDelegate {
 }
 
 protocol GDListCellDelegate {
-  func toggleTodo(id:Int, status:Bool)
+  func toggleToDo(updatedToDo:ToDo)
 }

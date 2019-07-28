@@ -120,24 +120,24 @@ extension ListController: UITextFieldDelegate {
 
 extension ListController: UITableViewDelegate, UITableViewDataSource, GDListCellDelegate {
   
-  // SPECIAL NOTE: Connecting the checkbox
-  func toggleTodo(id:Int, status: Bool) {
-    //print(id, status)
+  func toggleToDo(updatedToDo:ToDo) {
     
-    let newistData = self.listData.map { (toDo) -> ToDo in
+    let newListData = self.listData.map { (oldToDo) -> ToDo in
+      
       // if the id passed in is equal to toDo id
-      if toDo.id == id {
-        var newToDo = toDo
-        newToDo.status = status
-        print("toggleTodo - 1")
-        return newToDo
+      if oldToDo.id == updatedToDo.id {
+        var newToDo = oldToDo
+        newToDo.status = updatedToDo.status
+        newToDo.title = updatedToDo.title
+        return newToDo // Return updated ToDo, Add to newListData, Exit mapping loop
+      } else {
+        return oldToDo // Return ToDo that is unchanged
       }
-      print("toggleTodo - 2")
-      return toDo
+      
     }
-    print("toggleTodo - 3")
-    self.listData = newistData
-    self.listTable.reloadData()
+    
+    self.listData = newListData // Assign new list to listData
+    self.listTable.reloadData() // Reload udpated data
   }
   
   
@@ -186,10 +186,7 @@ extension ListController: UITableViewDelegate, UITableViewDataSource, GDListCell
 //    cell.textLabel?.text = listData[indexPath.row].title
     cell.toDo = self.listData[indexPath.row] // the assignement statment triggers of the set method which in term sets the title in the cell
  
-    // SPECIAL NOTE: Connecting the checkbox
-    // The box in the cell is assigned as the delegate
-    // when the checkbox is selected
-    cell.box.delegate = self
+    cell.delegate = self
     
     var itemsForSection:[ToDo] = []
     
