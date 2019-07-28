@@ -35,11 +35,7 @@ class ListController: UIViewController, GDHeaderDelegate, GDNewItemDelegate {
   
   let CELL_ID = "cell_id"
   
-  var listData = [
-    ToDo(id: 0, title: "first item", status: false),
-    ToDo(id: 1, title: "hey dood", status: true),
-    ToDo(id: 2, title: "Its lit yo", status: true)
-  ]
+  var listData = [ToDo]()
   
   var keyboardHeight:CGFloat = 350
   
@@ -52,10 +48,26 @@ class ListController: UIViewController, GDHeaderDelegate, GDNewItemDelegate {
     self.keyboardHeight = keyboardSize.height
   }
   
+  func updateHeaderItemsLeft() {
+    header.itemsLeft = 0
+    
+    self.listData.forEach { (toDo) in
+      if !toDo.status { header.itemsLeft += 1}
+      
+    }
+  }
   // MARK: - View LifeCycle
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    listData = [
+      ToDo(id: 0, title: "first item", status: false),
+      ToDo(id: 1, title: "hey dood", status: true),
+      ToDo(id: 2, title: "Its lit yo", status: true)
+    ]
+    
+    self.updateHeaderItemsLeft()
     
     view.backgroundColor = .white
   
@@ -136,8 +148,9 @@ extension ListController: UITableViewDelegate, UITableViewDataSource, GDListCell
       
     }
     
-    self.listData = newListData // Assign new list to listData
-    self.listTable.reloadData() // Reload udpated data
+    self.listData = newListData   // Assign new list to listData
+    self.listTable.reloadData()   // Reload udpated data
+    self.updateHeaderItemsLeft()  // Update header label reflecting the number of remaining ToDos
   }
   
   
