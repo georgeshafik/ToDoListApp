@@ -40,6 +40,7 @@ class ListController: UIViewController, GDHeaderDelegate, GDNewItemDelegate {
 
   let header = GDHeaderView(title: "Stuff to get done", subtitle: "4 left")
   let tbInset:CGFloat = 16
+  var bgBottom:NSLayoutConstraint!
   
   // Note is a lazy var so tbInset is initialised
   lazy var bg:UIView = {
@@ -99,7 +100,8 @@ class ListController: UIViewController, GDHeaderDelegate, GDNewItemDelegate {
     view.addSubview(bg)
     bg.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true // 20 pixels from left
     bg.topAnchor.constraint(equalTo: header.bottomAnchor, constant: 20).isActive = true // 20 pixels from top
-    bg.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100).isActive = true // 20 pixels from bottom
+    bgBottom = bg.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100) // 100 pixels from bottom
+    bgBottom.isActive = true
     bg.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true // 20 pixels from right
     
     view.addSubview(listTable)
@@ -139,13 +141,24 @@ class ListController: UIViewController, GDHeaderDelegate, GDNewItemDelegate {
 // class ListController: UIViewController, GDHeaderDelegate, UITextFieldDelegate
 extension ListController: UITextFieldDelegate {
   
+  // Code handles keyboard scrolling into view
   func textFieldDidBeginEditing(_ textField: UITextField) {
+    self.bgBottom.constant = -keyboardHeight - 100 // when we start editing, makeing room for the keyboard
+    UIView.animate(withDuration: 0.3) {
+      self.view.layoutIfNeeded()
+    }
     popup.animateView(transform: CGAffineTransform(translationX: 0, y: -keyboardHeight), duration: 0.5)
   }
-  
+
+  // Code handles keyboard scrolling into view
   func textFieldDidEndEditing(_ textField: UITextField) {
+    self.bgBottom.constant = -100 // when we finish editing, return the space as the keyboard has disappear
+    UIView.animate(withDuration: 0.3) {
+      self.view.layoutIfNeeded()
+    }
     popup.animateView(transform: CGAffineTransform(translationX: 0, y: 0), duration: 0.6)
   }
+  
 }
 
 // MARK: - ListController UITableViewDelegate, UITableViewDataSource
@@ -220,7 +233,7 @@ extension ListController: UITableViewDelegate, UITableViewDataSource, GDListCell
     cell.toDo = self.listData[indexPath.row] // the assignement statment triggers of the set method which in term sets the title in the cell
  
     cell.delegate = self
-    
+    cell.textField.delegate = self
     var itemsForSection:[ToDo] = []
     
     self.listData.forEach { (toDo) in
