@@ -14,8 +14,26 @@ class ListController: UIViewController, GDHeaderDelegate, GDNewItemDelegate {
     popup.animatePopup()
   }
   
+  func notInList(text:String) -> Bool {
+    var isNotInList = true
+    self.listData.forEach { (toDo) in
+      if (toDo.title == text) {
+       isNotInList = false
+      }
+    }
+    
+    return isNotInList
+  }
+  
   func addItemToList(text:String) {
-    print("text in texfield is \(text)")
+    if (notInList(text: text)) {
+      let newItem = ToDo(id: self.listData.count, title: text, status: false)
+      self.listData.append(newItem)
+      self.listTable.reloadData()   // Reload udpated data
+      self.updateHeaderItemsLeft()  // Update header label reflecting the number of remaining ToDos
+      self.popup.textField.text = ""
+      self.popup.animatePopup()
+    }
   }
   
   // MARK: - ListController and UI Controls
