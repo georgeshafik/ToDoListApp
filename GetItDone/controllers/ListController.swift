@@ -80,12 +80,13 @@ class ListController: UIViewController, GDHeaderDelegate, GDNewItemDelegate {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    listData = [
-      ToDo(id: 0, title: "first item", status: false),
-      ToDo(id: 1, title: "hey dood", status: true),
-      ToDo(id: 2, title: "Its lit yo", status: true)
-    ]
-    
+//    listData = [
+//      ToDo(id: 0, title: "first item", status: false),
+//      ToDo(id: 1, title: "hey dood", status: true),
+//      ToDo(id: 2, title: "Its lit yo", status: true)
+//    ]
+
+    listData = []
     self.updateHeaderItemsLeft()
     
     view.backgroundColor = .white
@@ -141,22 +142,65 @@ class ListController: UIViewController, GDHeaderDelegate, GDNewItemDelegate {
 // class ListController: UIViewController, GDHeaderDelegate, UITextFieldDelegate
 extension ListController: UITextFieldDelegate {
   
+  
+  func createAlert(title: String, message: String, textField: UITextField) {
+    
+    let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+
+    alert.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.default, handler: { (action) in
+      alert.dismiss(animated: true, completion: nil)
+      self.addItemToList(text: textField.text!)
+    } ))
+
+    alert.addAction(UIAlertAction(title: "No", style: UIAlertAction.Style.default, handler: { (action) in
+      alert.dismiss(animated: true, completion: nil)
+      textField.text! = ""
+    } ))
+    
+    self.present(alert,animated: true,completion: nil)
+    
+  }
+  
+  
+  // handle return key when pressed
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    self.bgBottom.constant = -100
+    textField.resignFirstResponder()
+
+    //print("Return keyboard pressed")
+    
+    if (!textField.text!.isEmpty) {
+      self.createAlert(title: "Item is not empty", message: "To Do Item was supplied", textField: textField)
+    }
+
+    return true
+  }
+  
   // Code handles keyboard scrolling into view
   func textFieldDidBeginEditing(_ textField: UITextField) {
-    self.bgBottom.constant = -keyboardHeight - 100 // when we start editing, makeing room for the keyboard
+    var heightToAnimate = -keyboardHeight - 20 // when we start editing, makeing room for the keyboard
+    
+    if textField == popup.textField {
+      popup.animateView(transform: CGAffineTransform(translationX: 0, y: -keyboardHeight), duration: 0.5)
+      heightToAnimate -= 80
+    }
+    
+    self.bgBottom.constant = heightToAnimate
     UIView.animate(withDuration: 0.3) {
       self.view.layoutIfNeeded()
     }
-    popup.animateView(transform: CGAffineTransform(translationX: 0, y: -keyboardHeight), duration: 0.5)
   }
 
   // Code handles keyboard scrolling into view
   func textFieldDidEndEditing(_ textField: UITextField) {
-    self.bgBottom.constant = -100 // when we finish editing, return the space as the keyboard has disappear
+    self.bgBottom.constant = -100
     UIView.animate(withDuration: 0.3) {
       self.view.layoutIfNeeded()
     }
-    popup.animateView(transform: CGAffineTransform(translationX: 0, y: 0), duration: 0.6)
+    
+    if textField == popup.textField {
+      popup.animateView(transform: CGAffineTransform(translationX: 0, y: 0), duration: 0.6)
+    }
   }
   
 }
