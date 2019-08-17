@@ -28,6 +28,7 @@
 		67C87ACB22D613E4004D537E /* protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C87ACA22D613E4004D537E /* protocol.swift */; };
 		67C87ACD22D61926004D537E /* GDNewItemPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C87ACC22D61926004D537E /* GDNewItemPopup.swift */; };
 		67D811A522EBC76C004BCEF4 /* GDCheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D811A422EBC76C004BCEF4 /* GDCheckBox.swift */; };
+		67F22B3F22F592CA006675EB /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F22B3E22F592CA006675EB /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		67C87ACA22D613E4004D537E /* protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = protocol.swift; sourceTree = "<group>"; };
 		67C87ACC22D61926004D537E /* GDNewItemPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDNewItemPopup.swift; sourceTree = "<group>"; };
 		67D811A422EBC76C004BCEF4 /* GDCheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDCheckBox.swift; sourceTree = "<group>"; };
+		67F22B3E22F592CA006675EB /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				67226CE922D560C1008489C7 /* LaunchScreen.storyboard */,
 				67226CEC22D560C1008489C7 /* Info.plist */,
 				67226CE422D560BF008489C7 /* GetItDone.xcdatamodeld */,
+				67F22B3E22F592CA006675EB /* CoreDataManager.swift */,
 			);
 			path = GetItDone;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 				67D811A522EBC76C004BCEF4 /* GDCheckBox.swift in Sources */,
 				67226CE022D560BF008489C7 /* WelcomeController.swift in Sources */,
 				67226CE622D560BF008489C7 /* GetItDone.xcdatamodeld in Sources */,
+				67F22B3F22F592CA006675EB /* CoreDataManager.swift in Sources */,
 				67C87AB922D5ABB0004D537E /* GDLabel.swift in Sources */,
 				67C87A9822D58E00004D537E /* extension.swift in Sources */,
 				67679F2422D6ABD500709C8B /* GDTextField.swift in Sources */,

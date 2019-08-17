@@ -27,8 +27,8 @@ class ListController: UIViewController, GDHeaderDelegate, GDNewItemDelegate {
   
   func addItemToList(text:String) {
     if (notInList(text: text)) {
-      let newItem = ToDo(id: self.listData.count, title: text, status: false)
-      self.listData.append(newItem)
+//      let newItem = ToDo(id: self.listData.count, title: text, status: false)
+//      self.listData.append(newItem)
       self.listTable.reloadData()   // Reload udpated data
       self.updateHeaderItemsLeft()  // Update header label reflecting the number of remaining ToDos
       self.popup.textField.text = ""
@@ -86,7 +86,10 @@ class ListController: UIViewController, GDHeaderDelegate, GDNewItemDelegate {
 //      ToDo(id: 2, title: "Its lit yo", status: true)
 //    ]
 
-    listData = []
+//    listData = []
+    listData = CoreDataManager.shared.fetchToDos()
+
+
     self.updateHeaderItemsLeft()
     
     view.backgroundColor = .white
