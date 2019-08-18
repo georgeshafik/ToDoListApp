@@ -29,7 +29,7 @@ struct CoreDataManager {
     
   }()
   
-  func creteToDo() {
+  func creteToDo(id:Double, title:String, status:Bool) {
     
     // when we run this we are going to get a view context from our persistant containe
     let context = persistenContainer.viewContext
@@ -37,9 +37,6 @@ struct CoreDataManager {
     // create a toDo object and inserted into our comtainer for entity toDo
     let toDo = NSEntityDescription.insertNewObject(forEntityName: "ToDo", into: context)
     
-    let id = 1
-    let title = "Lets Do Thtis!"
-    let status = false
     
     toDo.setValue(id, forKey: "id")
     toDo.setValue(title, forKey: "title")

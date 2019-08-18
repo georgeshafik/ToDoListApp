@@ -212,23 +212,24 @@ extension ListController: UITextFieldDelegate {
 
 extension ListController: UITableViewDelegate, UITableViewDataSource, GDListCellDelegate {
   
-  func toggleToDo(updatedToDo:ToDo) {
+  func toggleToDo() {
     
-    let newListData = self.listData.map { (oldToDo) -> ToDo in
-      
-      // if the id passed in is equal to toDo id
-      if oldToDo.id == updatedToDo.id {
-        var newToDo = oldToDo
-        newToDo.status = updatedToDo.status
-        newToDo.title = updatedToDo.title
-        return newToDo // Return updated ToDo, Add to newListData, Exit mapping loop
-      } else {
-        return oldToDo // Return ToDo that is unchanged
-      }
-      
-    }
-    
-    self.listData = newListData   // Assign new list to listData
+//    let newListData = self.listData.map { (oldToDo) -> ToDo in
+//
+//      // if the id passed in is equal to toDo id
+//      if oldToDo.id == updatedToDo.id {
+//        var newToDo = oldToDo
+//        newToDo.status = updatedToDo.status
+//        newToDo.title = updatedToDo.title
+//        return newToDo // Return updated ToDo, Add to newListData, Exit mapping loop
+//      } else {
+//        return oldToDo // Return ToDo that is unchanged
+//      }
+//
+//    }
+//
+//    self.listData = newListData   // Assign new list to listData
+    self.listData = CoreDataManager.shared.fetchToDos()
     self.listTable.reloadData()   // Reload udpated data
     self.updateHeaderItemsLeft()  // Update header label reflecting the number of remaining ToDos
   }
