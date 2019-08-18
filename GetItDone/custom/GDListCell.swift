@@ -16,7 +16,9 @@ class GDListCell:UITableViewCell {
     if let delegate = self.delegate, let toDo = self.toDo {
 //        let newToDo = ToDo(id: toDo.id, title: textField.text!, status: !toDo.status)
 //        delegate.toggleToDo(updatedToDo: newToDo)
-//     CoreDataManager.shared.deleteToDo()
+      
+      // We delete and re-create our todo with the same data with a new status
+      CoreDataManager.shared.deleteToDo(id: toDo.id)
       CoreDataManager.shared.creteToDo(id: toDo.id, title: textField.text!, status: !toDo.status)
       delegate.toggleToDo()
     }

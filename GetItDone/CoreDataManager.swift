@@ -29,6 +29,30 @@ struct CoreDataManager {
     
   }()
   
+  func deleteToDo(id:Double) {
+    
+    let context = persistenContainer.viewContext
+    
+    //fetch todos
+    let fetchRequest = NSFetchRequest<ToDo>(entityName: "ToDo")
+    
+    
+    do {
+      let toDos =  try context.fetch(fetchRequest)
+
+      //go through todos and find mathching ids
+      //delete todos with matching ids
+      toDos.forEach { (fetchToDoo) in
+        if fetchToDoo.id == id {
+          context.delete(fetchToDoo)
+        }
+      }
+    } catch let err {
+      print("failed to save context with new toDo:", err)
+    }
+    
+  }
+  
   func creteToDo(id:Double, title:String, status:Bool) {
     
     // when we run this we are going to get a view context from our persistant containe
@@ -45,7 +69,7 @@ struct CoreDataManager {
     do {
       try context.save()
     } catch let err {
-      print("failed to save context with new toDo:", err)
+      print("failed to fetch or delete todo from context", err)
     }
   }
   
@@ -58,7 +82,7 @@ struct CoreDataManager {
       let toDos =  try context.fetch(fetchRequest)      
       return toDos
     } catch let err {
-      print("failed to save context with new toDo:", err)
+      print("failed to fetch todos from context", err)
       return [] // its failed return empty array
     }
     
